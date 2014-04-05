@@ -1,0 +1,17 @@
+{
+  "name": "dstruc",
+  "version": "0.0.1",
+  "description": "Get directories and files recursively.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "directory",
+    "files",
+    "recursive",
+    "structure"
+  ],
+  "author": "Robert Stenbom (SHOCKWORK)",
+  "license": "BSD-2-Clause"
+}
