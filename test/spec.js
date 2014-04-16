@@ -54,5 +54,20 @@ describe('dstruc', function() {
                 }
             );
         });
+
+        describe('extension as key', function () {
+            it('files should not be an array', function () {
+                var path, result;
+                path = test_path + '/mock/single_level';
+                result = dstruc.sync(path, true);
+                expect(result.files).to.not.be.an('array');
+            });
+
+            it('should return extension as key', function () {
+                var path, result;
+                path = test_path + '/mock/single_level';
+                result = dstruc.sync(path, true);
+            });
+        });
     });
 });

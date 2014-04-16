@@ -17,11 +17,41 @@ var structure = ds.sync('/path/to/dir');
 {
 	files: [],
 	dirs: {
-		dirname: {
-			files: [],
-			dirs: [Object] …
-		}
+		styles: {
+			files: ['style.css'],
+			dirs: {}
+		},
+                        javascript: {
+                            files: ['jquery.js', 'backbone.js', 'underscore'.js', 'model.coffee'],
+                            dirs: {}
+                    }
 	}
+}
+*/
+```
+You can also get the files in an object  with file extensions as the keys by passing true as the second argument:
+
+```js
+var ds = require('dstruc');
+var structure = ds.sync('/path/to/dir', true);
+/*
+{
+    files: [],
+    dirs: {
+        styles: {
+            files: {
+                css: ['style.css']
+            },
+            dirs: {}
+        },
+        javascript: {
+            files: {
+                js: ['jquery.js', 'backbone.js', 'underscore.js'],
+                coffee: ['model.coffee']
+            },
+            dirs: {}
+        }
+    }
 }
 */
 ```

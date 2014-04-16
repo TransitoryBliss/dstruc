@@ -12,15 +12,23 @@ format = require('util').format;
 var sync = function (path, extensionAsKey) {
 	var files, structure;
 	files = fs.readdirSync(path);
-	structure = {files: [], dirs: {}};
+	structure = { dirs: {} };
+            structure.files = (extensionAsKey) ? {} : [];
 	files.forEach(function (file, index) {
 		if (file[0] !== '.') {
 			var filepath = format('%s/%s', path, file);
 			var stat = fs.statSync(filepath);
 			if (stat.isDirectory()) {
-				structure['dirs'][file] = sync(filepath); // directory, parse it
+				structure.dirs[file] = sync(filepath); // directory, parse it
 			} else {
-				structure['files'].push(file); // file, push it to array
+                                        if (extensionAsKey) {
+                                            var ext = file.split('.')
+                                            ext = ext[ext.length-1];
+                                            if (!structure.files[ext]) structure.files[ext] = [];
+                                            structure.files[ext].push(file);
+                                        } else {
+                                            structure.files.push(file); // file, push it to array
+                                        }
 			}
 		}
 	});
