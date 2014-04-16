@@ -4,7 +4,7 @@
   "description": "Get directories and files recursively.",
   "main": "dstruc.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "node ./node_modules/mocha/bin/mocha --reporter spec test"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "author": "Robert Stenbom (SHOCKWORK)",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "chai": "^1.9.1"
+    "mocha": "latest",
+    "chai": "1.9.1"
   }
 }
