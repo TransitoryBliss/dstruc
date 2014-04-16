@@ -24,8 +24,17 @@ var structure = ds.sync('/path/to/dir');
 */
 ```
 
+## Testing
+
+__Install mocha__
+
+    $ npm install -g mocha
+
+__Run tests__
+
+    $ npm test
+
 ### Todo
-* Add tests
 * Add async version
 
 ## License

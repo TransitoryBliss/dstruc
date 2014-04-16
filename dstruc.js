@@ -14,13 +14,11 @@ format = require('util').format;
 var sync = function (dir) {
 	var files, structure;
 	files = fs.readdirSync(dir);
-	structure = {};
+	structure = {files: [], dirs: {}};
 	files.forEach(function (file, index) {
 		if (file[0] !== '.') {
 			var filepath = format('%s/%s', dir, file);
 			var stat = fs.statSync(filepath);
-			structure['files'] = [];
-			structure['dirs'] = {};
 			if (stat.isDirectory()) {
 				structure['dirs'][file] = sync(filepath); // directory, parse it
 			} else {

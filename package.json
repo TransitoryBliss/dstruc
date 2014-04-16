@@ -1,10 +1,10 @@
 {
   "name": "dstruc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Get directories and files recursively.",
-  "main": "index.js",
+  "main": "dstruc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
     "structure"
   ],
   "author": "Robert Stenbom (SHOCKWORK)",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "chai": "^1.9.1"
+  }
 }
