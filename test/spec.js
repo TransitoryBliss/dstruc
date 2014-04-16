@@ -67,6 +67,14 @@ describe('dstruc', function() {
                 var path, result;
                 path = test_path + '/mock/single_level';
                 result = dstruc.sync(path, true);
+                expect(result).to.deep.equal(
+                    {
+                        dirs: {},
+                        files: {
+                            txt: ['one.file.txt', 'two.file.txt' ]
+                        }
+                    }
+                );
             });
         });
     });
