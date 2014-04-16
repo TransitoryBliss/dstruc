@@ -45,7 +45,7 @@ describe('dstruc', function() {
                                     dirs: {}
                                 },
                                 "another_level_two": {
-                                    files: [],
+                                    files: ['another.txt'],
                                     dirs: {}
                                 }
                             }
