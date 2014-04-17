@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/shockwork/dstruc.svg?branch=master)](https://travis-ci.org/shockwork/dstruc)
 
-Get directory structure and files from specified path in node.
+__Quickly__ get directory structure and files from a specified path in node, with support for recursive operations.
 
 ## Installation
 
@@ -11,51 +11,18 @@ Get directory structure and files from specified path in node.
 ## Usage
 
 ```js
-var ds = require('dstruc');
-var structure = ds.sync('/path/to/dir');
-/*
-{
-	files: [],
-	dirs: {
-		styles: {
-			files: ['style.css'],
-			dirs: {}
-		},
-                        javascript: {
-                            files: ['jquery.js', 'backbone.js', 'underscore'.js', 'model.coffee'],
-                            dirs: {}
-                    }
-	}
-}
-*/
-```
-You can also get the files in an object  with file extensions as the keys by passing true as the second argument:
+var dstruc = require('dstruc');
+var structure = dstruc.sync('/path/to/dir', {
+    recursive: true,
+    extensionAsKey: false
+});
 
-```js
-var ds = require('dstruc');
-var structure = ds.sync('/path/to/dir', true);
-/*
-{
-    files: [],
-    dirs: {
-        styles: {
-            files: {
-                css: ['style.css']
-            },
-            dirs: {}
-        },
-        javascript: {
-            files: {
-                js: ['jquery.js', 'backbone.js', 'underscore.js'],
-                coffee: ['model.coffee']
-            },
-            dirs: {}
-        }
-    }
-}
-*/
-```
+#### Options
+__recursive__: Will traverse directories until it reaches the bottom. If set to false, directories of the top level will instead be put in an array.
+__extensionAsKey__: Will put the files in an object with their extension as the key instead of an array.
 
+
+```
 ## Testing
 
     $ npm test
