@@ -13,13 +13,17 @@ __Quickly__ get directory structure and files from a specified path in node, wit
 ```js
 var dstruc = require('dstruc');
 var structure = dstruc.sync('/path/to/dir');
-console.log(structure); /* 
-outputs { 
-  files: [ 'level.one.file.txt' ],
-  dirs: { 
-     another_level_two: { 
-        files: [Object], dirs: {} 
-     },
+console.log(structure); 
+/* 
+{ files: [ 'level.one.file.txt' ],
+  dirs:
+   { another_level_two: { files: [Object], dirs: {} },
+     level_two: { files: [Object], dirs: {} } } }
+*/
+
+var structureWithExtensions = dstruc.sync('/another/path/to/dir', { extensionAsKey: true });
+console.log(structureWithExtensions);
+/*{ files: { txt: [ 'one.file.txt', 'two.file.txt' ] }, dirs: {} }*/
 ```
 
 #### Options
