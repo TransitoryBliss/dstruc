@@ -18,8 +18,11 @@
   ],
   "author": "Robert Stenbom (SHOCKWORK)",
   "license": "BSD-2-Clause",
-  "dependencies": {
+  "devDependencies": {
     "mocha": "latest",
     "chai": "1.9.1"
+  },
+  "dependencies": {
+    "utils-merge": "^1.0.0"
   }
 }
