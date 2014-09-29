@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/shockwork/dstruc.svg?branch=master)](https://travis-ci.org/shockwork/dstruc)
 
-_note_ tests might fail due to deepEqual looking for index on arrays.. any solutions welcome..
+### Note on tests
+ The tests might fail on travis due to deepEqual matching the index on arrays; this might cause a missmatch with FS and the expected output. I will look into a better solution when possible.
 
 __Quickly__ get directory structure and files from a specified path in node, with support for recursive operations.
 
